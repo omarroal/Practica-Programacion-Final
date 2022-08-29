@@ -2,6 +2,3 @@
 Practica Programacion Septiembre
 
 -------
-
-
-¿Pregunta 1?
