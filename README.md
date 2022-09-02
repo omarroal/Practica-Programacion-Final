@@ -22,7 +22,7 @@ de alguna de las tablas ya existentes en la base de datos activa OK
 
 3.Modificar el comando select para que se pueda indicar opcionalmente el nombre del campo por el cual ordenar el listado. 
 Si dicho campo no existe se indicará con un mensaje de error (si el campo no se indica en el comando funcionará igual que antes)
- entra en edit para verlo bien
+ entra en edit para verlo bien OK
 
     select [<campo> ox <valor>] [<orden> [<campo>]]
     
@@ -39,7 +39,11 @@ Si el campo no existe o el valor no es de tipo valido, se indicara con error
     update campo = valor [where campo ox valor]
     
     ¿TODO OK?
+    1 2 3
+    
+    ¿Tengo que quitar email?
     
 -------
 
-La aplicación admitirá tres tipos de datos, NUMERO, FECHA y TEXTO
+La aplicación admitirá tres tipos de datos, NUMERO, FECHA y TEXTO 
+
