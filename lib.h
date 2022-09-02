@@ -1,3 +1,6 @@
+
+
+
 #ifndef _lib_H_
 #define _lib_H_
 
@@ -73,7 +76,7 @@ int validar_caracteres_bd(char *nombre_bd);
 int validar_email(char *email);
 ROW *borrarLineaValorDeseado(int numcampos, ROW *linea, TYPE tipo, char *valor, char *simbolo, int posicion);
 TABLE *borrar_tabla(TABLE *LaGranTabla, char *tabla_borradora);
-TABLE *seleccionarTablaOtraBD(char *nombre_tabla, char *nombre_bd_origen, char *nombre_bd_destino, TABLE *LaGranTabla);
+TABLE *seleccionarTablaOtraBD(char *nombre_tabla, char *nombre_bd_origen, char *nombre_bd_destino, TABLE *LaGranTabla, char *nombreNuevaTabla);
 
 
 #endif
