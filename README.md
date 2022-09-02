@@ -9,11 +9,11 @@ Se pide realizar un programa en C que emule de forma rudimentaria el funcionamie
 
 1. Modificar el comando remove para que pida confirmacion al usuario antes de borrar 
 la tabla (en caso de que no haya error) pulsar 's'+ [intro] borra la tabla, cualquier otra respuesta 
-cancelara la operacion
+cancelara la operacion OK
 
 2. Modificar el comando 'import ' para que se pueda indicar un nombre para la tabla de destino. 
 Deberá Indicarse error en caso de que el nombre de la nueva tabla de destino coincida con el nombre 
-de alguna de las tablas ya existentes en la base de datos activa
+de alguna de las tablas ya existentes en la base de datos activa OK
 
     import table <nombre_tabla> from <nombre_ bd> as <nueva_tabla>
     
