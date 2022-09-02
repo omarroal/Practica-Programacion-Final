@@ -23,6 +23,8 @@ Si dicho campo no existe se indicará con un mensaje de error (si el campo no se
  entra en edit para verlo bien
 
 select [<campo> ox <valor>] [<orden> [<campo>]]
+    
+    
 select [campo ox valor] [orden [campo]]
 
 
