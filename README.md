@@ -16,6 +16,8 @@ Deberá Indicarse error en caso de que el nombre de la nueva tabla de destino co
 de alguna de las tablas ya existentes en la base de datos activa
 
     import table <nombre_tabla> from <nombre_ bd> as <nueva_tabla>
+    
+    
     import table nombre_tabla from nombre_ bd as nueva_tabla
 
 3.Modificar el comando select para que se pueda indicar opcionalmente el nombre del campo por el cual ordenar el listado. 
