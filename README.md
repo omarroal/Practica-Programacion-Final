@@ -16,6 +16,7 @@ de alguna de las tablas ya existentes en la base de datos activa
 
 3.Modificar el comando select para que se pueda indicar opcionalmente el nombre del campo por el cual ordenar el listado. 
 Si dicho campo no existe se indicará con un mensaje de error (si el campo no se indica en el comando funcionará igual que antes)
+ entra en edit para verlo bien
 
 select [<campo> ox <valor>] [<orden> [<campo>]]
     
