@@ -30,8 +30,6 @@ Si dicho campo no existe se indicará con un mensaje de error (si el campo no se
     select [campo ox valor] [orden [campo]]
 
 
-PON MAIN.C
-
 4. Nuevo comando 'update' para modificar los registros de la tabla activa, 
 al terminar el comando indicara por pantalla el numero de registros afectados por el cambio solicitado.
 El comando cambia, de la tabla activa, todos los registros que cumplan con la condicion indicada (si no se indica condicion se cambian todos los registros de la tabla)
