@@ -4,6 +4,9 @@
 #include <unistd.h>
 #include "lib.h"
 
+// OMAR RODRIGUEZ ALVAREZ 
+// 48679912-K 
+
 // compilar con en windows con: --->   gcc lib.c main.c -o main.exe
 
 int main(){
@@ -11,14 +14,15 @@ int main(){
     char prompt[100] = "*";
     char com[100];
     char comaux[100];
+    char confirmar[100];
     char nombre_bd[100] = "*";
     char nombre_tabla[100] = "*";
 
-    int num_arg, i, j,  auxiliar, num_arg_aux;
+    int num_arg, i, j,  auxiliar, num_arg_aux, num_arg_comfirmar;
     int auxliar_enteros, auxiliar_comprobante;
     char s2[8] = " \n\t\r";
 
-    char *comtok[100];
+    char *comtok[100], *rem[100];
     char *comillas, *comillasaux;
     char **nombre, **valores;
     TYPE *tipos;
@@ -465,7 +469,9 @@ int main(){
 
             }
 
-            if(num_arg_aux == 1){ // COMANDO SELECT
+            // SELECT
+
+            if(num_arg_aux == 1){ 
                 impr_cabeceras(tabla_auxiliar);
                 imprimir_todo(LaGranLinea, tabla_auxiliar->numCampos);
             }
@@ -485,7 +491,7 @@ int main(){
 
                 }
                 else{
-                    printf("ERROR segundo parametro mal introducido\n");
+                    printf("Error segundo parametro mal introducido\n");
                 }
 
             }
@@ -505,7 +511,7 @@ int main(){
 
                             }
                             else{
-                                printf("error de tipos con las columnas\n");
+                                printf("Error en las columnas\n");
                                 break;
                             }
                         }
@@ -836,6 +842,29 @@ int main(){
                 continue;
             }
 
+            printf("Introduzca s en minuscula para confirmar la orden\n");
+            gets(confirmar);
+
+            num_arg_comfirmar = 0;
+            rem[num_arg_comfirmar] = strtok(confirmar, s2);
+
+            num_arg_comfirmar++;
+
+            while((rem[num_arg_comfirmar] = strtok(NULL, s2)) != NULL){
+                num_arg_comfirmar++;
+            }
+
+            if(rem[0] == NULL){
+                printf("Comando no valido para confirmar la orden\n");
+                continue;
+            }
+
+            if(strcmp(rem[0], "s") != 0){
+                printf("Comando no valido para confirmar la orden\n");
+                continue;
+            }
+
+
             auxiliar_comprobante = entrar_tabla(nombre_bd, comtok[1]);
 
             if(auxiliar_comprobante == 0){
@@ -973,9 +1002,9 @@ int main(){
 
 
         }
-        else if(strcmp(comtok[0], "import") == 0 && strcmp(comtok[1], "table") == 0 && strcmp(comtok[3], "from") == 0){
+        else if(strcmp(comtok[0], "import") == 0 && strcmp(comtok[1], "table") == 0 && strcmp(comtok[3], "from") == 0 && strcmp(comtok[5], "as") == 0){
 
-            if(num_arg != 5){
+            if(num_arg != 7){
                 printf("Error numero de argumentos\n");
                 continue;
             }
@@ -999,12 +1028,17 @@ int main(){
                 continue;
             }
 
-            if(entrar_tabla(nombre_bd, comtok[2]) == 1){ 
-                printf("La tabla a copiar existe 2\n");
+            // if(entrar_tabla(nombre_bd, comtok[2]) == 1){ 
+            //     printf("La tabla a copiar existe 2\n");
+            //     continue;
+            // }
+
+            if(entrar_tabla(nombre_bd, comtok[6]) == 1){ // aqui comprobamos que el nombre de la nueva tabla de destino coincida con el nombre de alguna de las tablas ya existentes en la base de datos activa
+                printf("No puedes llamar la tabla asi por que ya existe una con el mismo nombre en la bd de destino\n");
                 continue;
             }
 
-            LaGranTabla = seleccionarTablaOtraBD(comtok[2], comtok[4], nombre_bd, LaGranTabla);
+            LaGranTabla = seleccionarTablaOtraBD(comtok[2], comtok[4], nombre_bd, LaGranTabla, comtok[6]);
 
             mostrar_tablas(LaGranTabla);
         }
@@ -1014,6 +1048,10 @@ int main(){
         }
     }
 }
+
+
+
+
 
 
 
