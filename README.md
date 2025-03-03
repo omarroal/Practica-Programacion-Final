@@ -18,7 +18,7 @@ Deberá Indicarse error en caso de que el nombre de la nueva tabla de destino co
 La aplicación admitirá tres tipos de datos, NUMERO, FECHA y TEXTO
 
 
-3.Modificar el comando select para que se pueda indicar opcionalmente el nombre del campo por el cual ordenar el listado. 
+3. Modificar el comando select para que se pueda indicar opcionalmente el nombre del campo por el cual ordenar el listado. 
 
 Si dicho campo no existe se indicará con un mensaje de error (si el campo no se indica en el comando funcionará igual que antes)
 
